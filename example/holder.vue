@@ -2,6 +2,7 @@
       <contributionCalendar
         :history="history"
         :year="2016"
+        textcolor="gray"
         :cellClick="someMethod" />
 </template>
 

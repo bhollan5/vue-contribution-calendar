@@ -1,14 +1,13 @@
 <template>
   <div> 
      <svg width="700" height="100">
-      <style>
-        .day-label { font-family: courier; font-size: 13px; }
-      </style>
-      <text x="-13" y="13" class="day-label">M</text>
+      <text x="0" y="34" class="day-label" :style="'fill:' + textcolor">Mon</text>
+      <text x="0" y="60" class="day-label" :style="'fill:' + textcolor">Wed</text>
+      <text x="0" y="86" class="day-label" :style="'fill:' + textcolor">Fri</text>
       <g v-for="(day, index) in days"> 
         <rect
-          :x="day.weekIndex * 13"
-          :y="day.dayIndex  * 13"
+          :x="day.weekIndex * 13 + 24"
+          :y="day.dayIndex  * 13 + 13"
           :fill="calculateValue(day.date)"
           width="10"
           height="10"
@@ -20,6 +19,13 @@
     </svg>
   </div>
 </template>
+
+<style>
+.day-label {
+  font-size: 10px;
+  font-family: courier;
+}
+</style>
 
 <script>
   import { daysOfTheYear } from './generate-days';
@@ -37,6 +43,10 @@
       cellClick: {
         type: Function,
         default: () => ({})
+      },
+      textcolor: {
+        type: String,
+        default: 'black'
       }
     },
     data() {

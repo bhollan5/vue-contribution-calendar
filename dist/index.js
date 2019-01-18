@@ -154,6 +154,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//
+	//
+	//
+	//
+	//
 
 /***/ },
 /* 2 */
@@ -226,7 +230,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	      "width": "700",
 	      "height": "100"
 	    }
-	  }, _vm._l((_vm.days), function(day, index) {
+	  }, [_c('text', {
+	    staticClass: "day-label",
+	    attrs: {
+	      "x": "-13",
+	      "y": "13"
+	    }
+	  }, [_vm._v("M")]), _vm._v(" "), _vm._l((_vm.days), function(day, index) {
 	    return _c('g', [_c('rect', {
 	      attrs: {
 	        "x": day.weekIndex * 13,
@@ -241,7 +251,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        }
 	      }
 	    }, [_c('title', [_vm._v(_vm._s(day.date) + ":" + _vm._s(_vm.history[day.date] || 0))])])])
-	  }))])
+	  })], 2)])
 	},staticRenderFns: []}
 
 /***/ }
