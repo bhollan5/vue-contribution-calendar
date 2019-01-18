@@ -1,19 +1,23 @@
 <template>
   <div> 
      <svg width="700" height="100">
-        <g v-for="(day, index) in days"> 
-          <rect
-            :x="day.weekIndex * 13"
-            :y="day.dayIndex  * 13"
-            :fill="calculateValue(day.date)"
-            width="10"
-            height="10"
-            v-on:click="cellClick(day.date, history[day.date])"
-          >
-            <title>{{day.date}}:{{history[day.date]||0}}</title>
-          </rect>
-        </g>
-      </svg>
+      <style>
+        .day-label { font-family: courier; font-size: 13px; }
+      </style>
+      <text x="-13" y="13" class="day-label">M</text>
+      <g v-for="(day, index) in days"> 
+        <rect
+          :x="day.weekIndex * 13"
+          :y="day.dayIndex  * 13"
+          :fill="calculateValue(day.date)"
+          width="10"
+          height="10"
+          v-on:click="cellClick(day.date, history[day.date])"
+        >
+          <title>{{day.date}}:{{history[day.date]||0}}</title>
+        </rect>
+      </g>
+    </svg>
   </div>
 </template>
 
